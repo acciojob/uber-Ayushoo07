@@ -50,7 +50,7 @@ public class CustomerServiceImpl implements CustomerService {
 		int min=Integer.MAX_VALUE;
 		for (Driver free:driverList)
 		{
-			if (free.getCab().getAvailable() && free.getDriverId()<min)
+			if (free.getCab().getAvailable()==true && free.getDriverId()<min)
 			{
 				min=free.getDriverId();
 			}
@@ -76,7 +76,10 @@ public class CustomerServiceImpl implements CustomerService {
 		tripBooking.setCustomer(customer);
 		driver.getTripBookingList().add(tripBooking);
 		customer.getTripBookings().add(tripBooking);
+
+		driverRepository2.save(driver);
 		tripBookingRepository2.save(tripBooking);
+		customerRepository2.save(customer);
 
 		return tripBooking;
 
@@ -89,7 +92,7 @@ public class CustomerServiceImpl implements CustomerService {
 		tripBooking.getDriver().getCab().setAvailable(true);
 		tripBooking.setStatus(TripStatus.CANCELED);
 
-
+		driverRepository2.save(tripBooking.getDriver());
 		tripBookingRepository2.save(tripBooking);
 
 	}
