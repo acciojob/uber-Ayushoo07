@@ -45,6 +45,7 @@ public class Cab
     this.driver = driver;
   }
 
-  @OneToOne(mappedBy = "cab", cascade = CascadeType.ALL)
+  @OneToOne
+  @JoinColumn
   Driver driver;
 }

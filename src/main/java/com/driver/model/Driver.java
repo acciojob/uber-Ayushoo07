@@ -61,7 +61,8 @@ public class Driver
     this.tripBookingList = tripBookingList;
   }
 
-  @OneToOne @JoinColumn Cab cab;
+  @OneToOne(mappedBy = "driver",cascade = CascadeType.ALL)
+  Cab cab;
 
     @OneToMany(mappedBy = "driver",cascade = CascadeType.ALL)
     List<TripBooking> tripBookingList=new ArrayList<>();
