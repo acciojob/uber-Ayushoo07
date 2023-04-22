@@ -7,23 +7,23 @@ public class TripBooking
 {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int tripbookingId;
+    private int tripBookingId;
 
     private String fromLocation;
     private String toLocation;
     private int distanceInKm;
 
     @Enumerated(EnumType.STRING)
-    TripStatus tripStatus;
+    TripStatus Status;
 
     private int bill;public TripBooking() {}
 
-  public int getTripbookingId() {
-    return tripbookingId;
+  public int getTripBookingId() {
+    return tripBookingId;
   }
 
-  public void setTripbookingId(int tripbookingId) {
-    this.tripbookingId = tripbookingId;
+  public void setTripBookingId(int tripBookingId) {
+    this.tripBookingId = tripBookingId;
   }
 
   public String getFromLocation() {
@@ -50,12 +50,12 @@ public class TripBooking
     this.distanceInKm = distanceInKm;
   }
 
-  public TripStatus getTripStatus() {
-    return tripStatus;
+  public TripStatus getStatus() {
+    return Status;
   }
 
-  public void setTripStatus(TripStatus tripStatus) {
-    this.tripStatus = tripStatus;
+  public void setStatus(TripStatus status) {
+    Status = status;
   }
 
   public int getBill() {
@@ -83,17 +83,17 @@ public class TripBooking
   }
 
   public TripBooking(
-      int tripbookingId,
+      int tripBookingId,
       String fromLocation,
       String toLocation,
       int distanceInKm,
-      TripStatus tripStatus,
+      TripStatus status,
       int bill) {
-    this.tripbookingId = tripbookingId;
+    this.tripBookingId = tripBookingId;
     this.fromLocation = fromLocation;
     this.toLocation = toLocation;
     this.distanceInKm = distanceInKm;
-    this.tripStatus = tripStatus;
+    Status = status;
     this.bill = bill;
   }
 

@@ -26,7 +26,7 @@ public class DriverServiceImpl implements DriverService {
 		cab.setPerKmRate(10);
 
 		Driver driver=new Driver();
-		driver.setMobileNo(mobile);
+		driver.setMobile(mobile);
 		driver.setPassword(password);
 
 		cab.setDriver(driver);
@@ -40,7 +40,7 @@ public class DriverServiceImpl implements DriverService {
 	public void removeDriver(int driverId){
 		// Delete driver without using deleteById function
 		Driver driver=driverRepository3.findById(driverId).get();
-		driverRepository3.deleteByMobileNo(driver.getMobileNo());
+		driverRepository3.deleteByMobileNo(driver.getMobile());
 
 	}
 
