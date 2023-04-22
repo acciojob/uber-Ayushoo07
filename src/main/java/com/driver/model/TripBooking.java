@@ -50,7 +50,9 @@ public class TripBooking
     return driver;
   }
 
-
+  public void setBill(int bill) {
+    this.bill = bill;
+  }
 
   public void setFromLocation(String fromLocation) {
     this.fromLocation = fromLocation;
