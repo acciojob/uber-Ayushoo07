@@ -54,6 +54,10 @@ public class TripBooking
     this.bill = bill;
   }
 
+  public void setTripbookingId(int tripbookingId) {
+    this.tripbookingId = tripbookingId;
+  }
+
   public void setFromLocation(String fromLocation) {
     this.fromLocation = fromLocation;
   }
@@ -71,14 +75,14 @@ public class TripBooking
   }
 
   public void setCustomer(Customer customer) {
-            this.customer = customer;
+    this.customer = customer;
   }
+
   public void setDriver(Driver driver) {
-            this.driver = driver;
+    this.driver = driver;
   }
-  @ManyToOne
-  @JoinColumn
-  Customer customer;
+
+  @ManyToOne @JoinColumn Customer customer;
 
     @ManyToOne
     @JoinColumn

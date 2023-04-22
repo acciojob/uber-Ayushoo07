@@ -15,7 +15,7 @@ public class Customer
     this.customerId = customerId;
     this.password = password;
     this.mobile = mobile;
-  }public Customer() {}
+  }
 
   public int getCustomerId() {
     return customerId;
@@ -41,6 +41,14 @@ public class Customer
     this.mobile = mobile;
   }
 
-  @OneToMany(mappedBy = "customer",cascade = CascadeType.ALL)
-  List<TripBooking> tripBookings=new ArrayList<>();
+  public List<TripBooking> getTripBookings() {
+    return tripBookings;
+  }
+
+  public void setTripBookings(List<TripBooking> tripBookings) {
+    this.tripBookings = tripBookings;
+  }
+
+  @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
+  List<TripBooking> tripBookings = new ArrayList<>();
 }
