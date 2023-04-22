@@ -16,6 +16,7 @@ public class Customer
     this.password = password;
     this.mobile = mobile;
   }
+  public Customer() {}
 
   public int getCustomerId() {
     return customerId;
